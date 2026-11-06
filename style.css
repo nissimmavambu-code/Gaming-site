@@ -1,0 +1,556 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #080811;
+    --panel: #11111f;
+    --purple: #a78bfa;
+    --purple-light: #c4b5fd;
+    --white: #f5f2ff;
+    --muted: #a09caf;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar {
+    height: 82px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(8, 8, 17, 0.92);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid rgba(167, 139, 250, 0.12);
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.logo span,
+.section-heading h2 span,
+.community-section h2 span {
+    color: var(--purple);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 27px;
+}
+
+.navbar nav a {
+    font-size: 12px;
+    color: #c4c0d1;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--purple-light);
+}
+
+.nav-play {
+    padding: 13px 22px;
+    background: var(--purple);
+    color: #100d1d;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-play:hover,
+.primary-btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.menu-btn {
+    display: none;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 100vh;
+    padding: 150px 20px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 45%, rgba(101, 65, 180, 0.23), transparent 55%),
+        radial-gradient(ellipse at 20% 80%, rgba(60, 40, 120, 0.15), transparent 40%),
+        linear-gradient(180deg, #090817, #0c0b19 70%, #080811);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.18;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 70% 20%, white, transparent),
+        radial-gradient(2px 2px at 40% 80%, white, transparent),
+        radial-gradient(2px 2px at 85% 70%, white, transparent);
+    background-size: 180px 180px;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 850px;
+    animation: appear 1.2s ease;
+}
+
+.eyebrow {
+    color: var(--purple-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(65px, 12vw, 125px);
+    letter-spacing: 12px;
+    margin: 20px 0;
+    background: linear-gradient(180deg, #fff, #c6b2ff 55%, #7855c9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 60px rgba(167, 139, 250, 0.2);
+}
+
+.hero-description {
+    color: var(--muted);
+    line-height: 2;
+    max-width: 550px;
+    margin: 0 auto 35px;
+    font-size: 15px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    padding: 17px 27px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: var(--purple);
+    color: #100d1d;
+}
+
+.secondary-btn {
+    border: 1px solid rgba(196, 181, 253, 0.4);
+    color: white;
+}
+
+.secondary-btn:hover {
+    background: rgba(167, 139, 250, 0.12);
+}
+
+.hero-info {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 65px;
+    font-size: 10px;
+    color: #88819d;
+    letter-spacing: 2px;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 35px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #827b99;
+}
+
+.section {
+    padding: 115px 8%;
+    text-align: center;
+}
+
+.dark-section {
+    background: #0d0c18;
+}
+
+.section-heading {
+    margin-bottom: 55px;
+}
+
+.section-heading h2,
+.community-section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    margin: 17px 0;
+    letter-spacing: 3px;
+}
+
+.section-heading p,
+.community-section p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.game-box {
+    max-width: 650px;
+    margin: auto;
+    padding: 55px 30px;
+    background: linear-gradient(135deg, #171329, #10101c);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.2);
+}
+
+.game-symbol {
+    font-size: 55px;
+    color: var(--purple);
+    margin-bottom: 20px;
+}
+
+.game-box h3,
+.card h3,
+.wiki-card h3 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+}
+
+.game-box p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin: 15px 0 30px;
+}
+
+.game-box small {
+    display: block;
+    color: #77718c;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-top: 22px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card,
+.wiki-card {
+    text-align: left;
+    background: var(--panel);
+    border: 1px solid rgba(167, 139, 250, 0.12);
+    padding: 30px;
+    transition: 0.3s;
+}
+
+.card:hover,
+.wiki-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--purple);
+}
+
+.card-icon {
+    font-size: 30px;
+    color: var(--purple);
+    margin-bottom: 20px;
+}
+
+.card-tag {
+    color: var(--purple-light);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.card h3,
+.wiki-card h3 {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.card p,
+.wiki-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.wiki-card {
+    background: linear-gradient(145deg, #171329, #10101c);
+}
+
+.wiki-card > span {
+    color: var(--purple-light);
+    font-size: 35px;
+}
+
+.wiki-link {
+    display: inline-block;
+    margin-top: 25px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--purple-light);
+}
+
+.leaderboard {
+    max-width: 750px;
+    margin: auto;
+    background: var(--panel);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+}
+
+.leader-header,
+.leader-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 22px;
+    text-align: left;
+    border-bottom: 1px solid rgba(167, 139, 250, 0.1);
+    font-size: 12px;
+}
+
+.leader-header {
+    color: var(--purple-light);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.rank {
+    font-weight: 800;
+}
+
+.gold { color: #f6d365; }
+.silver { color: #c6c6d3; }
+.bronze { color: #cd8e63; }
+
+.leader-note {
+    color: #77718c;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: 25px;
+}
+
+.community-section {
+    background:
+        radial-gradient(ellipse at center, rgba(101, 65, 180, 0.18), transparent 65%);
+}
+
+.community-section p {
+    max-width: 520px;
+    margin: 0 auto 30px;
+}
+
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: #06060c;
+    border-top: 1px solid rgba(167, 139, 250, 0.12);
+}
+
+footer p {
+    margin-top: 12px;
+    color: #77718c;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1000px) {
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 750px) {
+    .navbar {
+        height: 70px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-play {
+        display: none;
+    }
+
+    .navbar nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        background: #10101c;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar nav.active {
+        display: flex;
+    }
+
+    .navbar nav a {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        letter-spacing: 5px;
+    }
+
+    .hero-info {
+        gap: 15px;
+        font-size: 8px;
+        flex-wrap: wrap;
+    }
+
+    .section {
+        padding: 85px 6%;
+    }
+}
+
+/* DEVELOPMENT PROGRESS */
+
+.progress-section {
+    background:
+        radial-gradient(ellipse at center, rgba(100, 65, 180, 0.12), transparent 65%);
+}
+
+.progress-container {
+    max-width: 750px;
+    margin: auto;
+    text-align: left;
+    background: #11111f;
+    padding: 35px;
+    border: 1px solid rgba(167, 139, 250, 0.18);
+}
+
+.progress-item {
+    margin-bottom: 32px;
+}
+
+.progress-item:last-child {
+    margin-bottom: 0;
+}
+
+.progress-item > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.progress-item h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+}
+
+.status {
+    font-size: 9px;
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+
+.completed {
+    color: #70e6a1;
+}
+
+.working {
+    color: #c4a1ff;
+}
+
+.planned {
+    color: #888397;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 7px;
+    background: #252238;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.progress-bar div {
+    height: 100%;
+    background: linear-gradient(90deg, #7651c9, #c4a1ff);
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+.progress-item small {
+    display: block;
+    text-align: right;
+    margin-top: 7px;
+    color: #9991ad;
+    font-size: 10px;
+}
